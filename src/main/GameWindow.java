@@ -2,16 +2,15 @@ package main;
 
 import javax.swing.*;
 
-class GameWindow {
-    private JFrame frame;
+class GameWindow extends JFrame {
 
-    public GameWindow() {
-        frame = new JFrame();
+    public GameWindow(GamePanel gamePanel) {
+        this.setTitle("Snake");
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setSize(400, 400);
 
-        frame.setTitle("Snake");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 400);
-        frame.setResizable(false);
-        frame.setVisible(true);
+        this.setLocationRelativeTo(null);
+        this.add(gamePanel);
+        this.setVisible(true);
     }
 }
