@@ -9,11 +9,9 @@ import java.util.Random;
 
 public class GamePanel extends JPanel {
     private double xDelta = 0, yDelta = 0;
-    private double xDir = 0.1, yDir = 0.1;
-    private int frames;
-    private long lastChecked = 0;
+    private double xDir = 1, yDir = 1;
     private Color color = new Color(150, 20, 90);
-    private Random random = new Random();
+    private final Random random = new Random();
 
     public GamePanel() {
         this.addKeyListener(new KeyboardInputs(this));
@@ -48,14 +46,6 @@ public class GamePanel extends JPanel {
         g2D.setColor(color);
         g2D.fillRect((int) xDelta, (int) yDelta, 200, 50);
 
-        /* Prints FPS */
-        frames++;
-        if (System.currentTimeMillis() - lastChecked >= 1000) {
-            System.out.println("FPS: " + frames);
-            frames = 0;
-            lastChecked = System.currentTimeMillis();
-        }
-        repaint();
 
     }
 
