@@ -1,0 +1,23 @@
+2023-11-01 18:01:19.180 [main] INFO  main.GamePanel - image imported - logger
+2023-11-01 18:01:52.719 [main] INFO  main.GamePanel - image imported - logger
+2023-11-01 18:41:14.707 [main] INFO  main.GamePanel - image imported - logger
+2023-11-01 18:41:54.740 [main] INFO  main.GamePanel - image imported - logger
+2023-11-01 20:07:34.103 [main] INFO  main.GamePanel - image imported - logger
+2023-11-01 20:13:06.174 [main] INFO  main.GamePanel - image imported - logger
+2023-11-01 20:23:34.179 [main] INFO  main.GamePanel - image imported - logger
+2023-11-01 20:23:34.181 [main] ERROR main.GamePanel - Error importing image: Image not found!
+java.lang.IllegalArgumentException: Image not found!
+	at main.GamePanel.importImg(GamePanel.java:39) [PlatformerTutorial/:?]
+	at main.GamePanel.<init>(GamePanel.java:23) [PlatformerTutorial/:?]
+	at main.Game.<init>(Game.java:10) [PlatformerTutorial/:?]
+	at main.Main.main(Main.java:5) [PlatformerTutorial/:?]
+2023-11-01 20:28:12.808 [main] INFO  main.GamePanel - image imported - logger
+2023-11-01 20:28:12.810 [main] ERROR main.GamePanel - Error importing image: Image not found!
+java.lang.IllegalArgumentException: Image not found!
+	at main.GamePanel.importImg(GamePanel.java:39) [PlatformerTutorial/:?]
+	at main.GamePanel.<init>(GamePanel.java:23) [PlatformerTutorial/:?]
+	at main.Game.<init>(Game.java:10) [PlatformerTutorial/:?]
+	at main.Main.main(Main.java:5) [PlatformerTutorial/:?]
+2023-11-01 20:29:06.503 [main] INFO  main.GamePanel - image imported - logger
+2023-11-01 20:35:40.204 [main] INFO  main.GamePanel - image imported - logger
+2023-11-01 20:35:53.316 [main] INFO  main.GamePanel - image imported - logger

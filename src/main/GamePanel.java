@@ -1,23 +1,49 @@
 package main;
 
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
 import inputs.KeyboardInputs;
 import inputs.MouseInputs;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.util.Random;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class GamePanel extends JPanel {
     private double xDelta = 0, yDelta = 0;
     private double xDir = 1, yDir = 1;
-    private Color color = new Color(150, 20, 90);
-    private final Random random = new Random();
+    private BufferedImage img, subImg;
+    private static final Logger logger = LogManager.getLogger(GamePanel.class);
 
     public GamePanel() {
+        importImg();
+        setPanelSize();
+
+        // Key Listeners
         this.addKeyListener(new KeyboardInputs(this));
+
+        // Mouse Listeners
         MouseInputs mouseInputs = new MouseInputs(this);
         this.addMouseListener(mouseInputs);
         this.addMouseMotionListener(mouseInputs);
+    }
+
+    private void importImg() {
+        try (InputStream inputStream = getClass().getResourceAsStream("/player_sprites.png")) {
+            if (inputStream == null) throw new IllegalArgumentException("Image not found!");
+            img = ImageIO.read(inputStream);
+        } catch (IOException e) {
+            logger.error("Error importing image: " + e.getMessage(), e);
+        }
+    }
+
+    private void setPanelSize() {
+        Dimension dimension = new Dimension(1280, 800);
+        this.setPreferredSize(dimension);
     }
 
     public void changeXDelta(int xDelta) {
@@ -41,33 +67,8 @@ public class GamePanel extends JPanel {
         // Rather than just the parts it's responsible for
         super.paintComponent(g);
 
-        updateRectangle();
         Graphics2D g2D = (Graphics2D) g;
-        g2D.setColor(color);
-        g2D.fillRect((int) xDelta, (int) yDelta, 200, 50);
-
-
-    }
-
-    private void updateRectangle() {
-        xDelta += xDir;
-        if (xDelta > 400 || xDelta < 0) {
-            xDir *= -1;
-            color = getRndColor();
-        }
-
-        yDelta += yDir;
-        if (yDelta > 400 || yDelta < 0) {
-            yDir *= -1;
-            color = getRndColor();
-        }
-    }
-
-    private Color getRndColor() {
-        int r = random.nextInt(256);
-        int g = random.nextInt(256);
-        int b = random.nextInt(256);
-
-        return new Color(r, g, b);
+        subImg = img.getSubimage(64, 6 * 40, 64, 40);
+        g2D.drawImage(subImg, (int) xDelta, (int) yDelta, 128, 80, null);
     }
 }
