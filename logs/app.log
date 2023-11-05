@@ -1,20 +1,172 @@
-18:41:54.740 [main] INFO  main.GamePanel - image imported - logger
-20:07:34.103 [main] INFO  main.GamePanel - image imported - logger
-20:13:06.174 [main] INFO  main.GamePanel - image imported - logger
-20:23:34.179 [main] INFO  main.GamePanel - image imported - logger
-20:23:34.181 [main] ERROR main.GamePanel - Error importing image: Image not found!
-java.lang.IllegalArgumentException: Image not found!
-	at main.GamePanel.importImg(GamePanel.java:39) [PlatformerTutorial/:?]
-	at main.GamePanel.<init>(GamePanel.java:23) [PlatformerTutorial/:?]
-	at main.Game.<init>(Game.java:10) [PlatformerTutorial/:?]
-	at main.Main.main(Main.java:5) [PlatformerTutorial/:?]
-20:28:12.808 [main] INFO  main.GamePanel - image imported - logger
-20:28:12.810 [main] ERROR main.GamePanel - Error importing image: Image not found!
-java.lang.IllegalArgumentException: Image not found!
-	at main.GamePanel.importImg(GamePanel.java:39) [PlatformerTutorial/:?]
-	at main.GamePanel.<init>(GamePanel.java:23) [PlatformerTutorial/:?]
-	at main.Game.<init>(Game.java:10) [PlatformerTutorial/:?]
-	at main.Main.main(Main.java:5) [PlatformerTutorial/:?]
-20:29:06.503 [main] INFO  main.GamePanel - image imported - logger
-20:35:40.204 [main] INFO  main.GamePanel - image imported - logger
-20:35:53.316 [main] INFO  main.GamePanel - image imported - logger
+19:46:59.492 [main] INFO  main.GamePanel - Idle animation 0 loaded
+19:46:59.499 [main] INFO  main.GamePanel - Idle animation 1 loaded
+19:46:59.499 [main] INFO  main.GamePanel - Idle animation 2 loaded
+19:46:59.499 [main] INFO  main.GamePanel - Idle animation 3 loaded
+19:46:59.500 [main] INFO  main.GamePanel - Idle animation 4 loaded
+19:56:58.697 [main] INFO  main.GamePanel - Idle animation 0 loaded
+19:56:58.699 [main] INFO  main.GamePanel - Idle animation 1 loaded
+19:56:58.699 [main] INFO  main.GamePanel - Idle animation 2 loaded
+19:56:58.700 [main] INFO  main.GamePanel - Idle animation 3 loaded
+19:56:58.700 [main] INFO  main.GamePanel - Idle animation 4 loaded
+19:57:29.568 [main] INFO  main.GamePanel - Idle animation 0 loaded
+19:57:29.570 [main] INFO  main.GamePanel - Idle animation 1 loaded
+19:57:29.570 [main] INFO  main.GamePanel - Idle animation 2 loaded
+19:57:29.570 [main] INFO  main.GamePanel - Idle animation 3 loaded
+19:57:29.570 [main] INFO  main.GamePanel - Idle animation 4 loaded
+20:01:15.132 [main] INFO  main.GamePanel - Idle animation 0 loaded
+20:01:15.133 [main] INFO  main.GamePanel - Idle animation 1 loaded
+20:01:15.134 [main] INFO  main.GamePanel - Idle animation 2 loaded
+20:01:15.134 [main] INFO  main.GamePanel - Idle animation 3 loaded
+20:01:15.134 [main] INFO  main.GamePanel - Idle animation 4 loaded
+22:00:45.175 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:45.298 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: null
+22:00:45.715 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:45.806 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: null
+22:00:46.395 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:46.508 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: null
+22:00:47.532 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:47.622 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: null
+22:00:47.930 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:48.065 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: null
+22:00:48.742 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:48.854 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: null
+22:00:49.380 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:49.469 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: null
+22:00:51.167 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:51.258 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: null
+22:00:51.349 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:51.418 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: null
+22:00:51.530 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:51.599 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: null
+22:00:51.651 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:51.737 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: null
+22:00:51.763 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:51.855 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: null
+22:00:52.034 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:52.547 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:52.578 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:52.610 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:52.642 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:52.674 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:52.704 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:52.734 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:52.766 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:52.812 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:52.842 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:52.874 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:52.908 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:52.938 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:52.972 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:53.000 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:53.030 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:53.076 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:53.111 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:53.139 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:53.172 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:53.201 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:53.213 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: null
+22:00:54.101 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: UP
+22:00:54.607 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: UP
+22:00:54.637 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: UP
+22:00:54.668 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: UP
+22:00:54.701 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: UP
+22:00:54.747 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: UP
+22:00:54.779 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: UP
+22:00:54.810 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: UP
+22:00:54.843 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: UP
+22:00:54.875 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: UP
+22:00:54.905 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: UP
+22:00:54.936 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: UP
+22:00:54.967 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: UP
+22:00:54.995 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: null
+22:00:55.237 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:55.744 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:55.776 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:55.808 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:55.837 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:55.907 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:55.916 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:55.947 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:55.979 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:56.009 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:56.040 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:56.078 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:56.103 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:56.147 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:56.181 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:56.210 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:56.245 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:56.272 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:56.304 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:56.336 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:56.367 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:56.412 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:56.442 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:56.478 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:56.505 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:56.537 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: DOWN
+22:00:56.567 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: null
+22:00:56.657 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:57.163 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:57.193 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:57.225 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:57.256 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:57.303 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:57.335 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:57.369 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:57.401 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:57.427 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:57.459 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:57.497 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:57.521 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:57.568 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:57.600 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:57.630 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:57.662 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:57.694 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:57.725 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:57.759 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:57.797 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:57.819 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:57.856 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: null
+22:00:59.204 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:59.710 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:59.742 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:59.774 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:59.805 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:59.851 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:59.884 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:59.916 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:59.947 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:00:59.978 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.037 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.056 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.091 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.127 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.140 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.182 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.213 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.269 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.284 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.307 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.338 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.370 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.401 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.446 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.502 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.508 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.539 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.570 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.602 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.638 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.665 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.709 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.740 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.778 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.805 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.833 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.866 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.903 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.936 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.959 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: RIGHT
+22:01:00.967 [AWT-EventQueue-0] INFO  main.GamePanel - Direction: null
