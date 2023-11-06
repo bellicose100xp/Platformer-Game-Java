@@ -1,22 +1,17 @@
 package entities;
 
-import main.GamePanel;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import util.LoadSave;
+import util.constants.AtlasPath;
 import util.constants.PlayerActionSprite;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.io.InputStream;
 
 import static util.constants.PlayerActionSprite.*;
 
 public class Player extends Entity {
 
     private BufferedImage[][] animations;
-    private static final Logger logger = LogManager.getLogger(GamePanel.class);
 
     private int animationTick;
     private int animationIndex;
@@ -78,7 +73,7 @@ public class Player extends Entity {
     }
 
     private void setAnimation() {
-        PlayerActionSprite startAnimation  = playerAction;
+        PlayerActionSprite startAnimation = playerAction;
 
         playerAction = moving ? RUNNING : IDLE;
 
@@ -91,23 +86,18 @@ public class Player extends Entity {
     }
 
     private void resetAnimationTick() {
-           animationTick = 0;
-           animationIndex = 0;
+        animationTick = 0;
+        animationIndex = 0;
     }
 
     private void loadAnimations() {
-        try (InputStream inputStream = getClass().getResourceAsStream("/player_sprites.png")) {
-            if (inputStream == null) throw new IllegalArgumentException("Image not found!");
-            BufferedImage img = ImageIO.read(inputStream);
+        BufferedImage img = LoadSave.getAtlas(AtlasPath.PLAYER);
 
-            animations = new BufferedImage[9][6];
-            for (int i = 0; i < animations.length; i++) {
-                for (int j = 0; j < animations[i].length; j++) {
-                    animations[i][j] = img.getSubimage(64 * j, 40 * i, 64, 40);
-                }
+        animations = new BufferedImage[9][6];
+        for (int i = 0; i < animations.length; i++) {
+            for (int j = 0; j < animations[i].length; j++) {
+                animations[i][j] = img.getSubimage(64 * j, 40 * i, 64, 40);
             }
-        } catch (IOException e) {
-            logger.error("Error importing image: " + e.getMessage(), e);
         }
     }
 
