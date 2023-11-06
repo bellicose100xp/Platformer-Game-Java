@@ -1,6 +1,6 @@
 package util.constants;
 
-public enum PlayerSprite {
+public enum PlayerActionSprite {
     IDLE(0, 5),
     RUNNING(1, 6),
     JUMP(2, 3),
@@ -14,7 +14,7 @@ public enum PlayerSprite {
     private final int idx;
     private final int frames;
 
-    PlayerSprite(int idx, int frames) {
+    PlayerActionSprite(int idx, int frames) {
         this.idx = idx;
         this.frames = frames;
     }

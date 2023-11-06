@@ -1,6 +1,8 @@
 package main;
 
 import javax.swing.*;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowFocusListener;
 
 class GameWindow extends JFrame {
 
@@ -14,5 +16,19 @@ class GameWindow extends JFrame {
         this.setLocationRelativeTo(null);  // Center the window on the screen, must come after .pack() line
 
         this.setVisible(true);
+
+        // Add window focus listener event to freeze game movement
+        // Resume when window gets focus
+        this.addWindowFocusListener(new WindowFocusListener() {
+            @Override
+            public void windowGainedFocus(WindowEvent e) {
+
+            }
+
+            @Override
+            public void windowLostFocus(WindowEvent e) {
+                gamePanel.getGame().windowFocusLost();
+            }
+        });
     }
 }
