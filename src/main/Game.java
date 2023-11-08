@@ -2,13 +2,24 @@ package main;
 
 
 import entities.Player;
+import levels.LevelManager;
 
 import java.awt.*;
 
 public class Game implements Runnable {
 
     private final GamePanel gamePanel;
+
     private Player player;
+    private LevelManager levelManager;
+
+    public static final int TILE_DEFAULT_SIZE = 32;
+    public static final double SCALE = 2;
+    public static final int TILES_IN_WIDTH = 26;
+    public static final int TILES_IN_HEIGHT = 14;
+    public static final int TILE_SIZE = (int) (TILE_DEFAULT_SIZE * SCALE);
+    public static final int GAME_WIDTH = TILE_SIZE * TILES_IN_WIDTH;
+    public static final int GAME_HEIGHT = TILE_SIZE * TILES_IN_HEIGHT;
 
     public Game() {
         // This needs to be first item
@@ -23,7 +34,10 @@ public class Game implements Runnable {
     }
 
     private void initGame() {
-        player = new Player(200, 200);
+        int playerWidth =  (int) (64 * SCALE);
+        int playerHeight = (int) (40 * SCALE);
+        player = new Player(200, 200, playerWidth, playerHeight );
+        levelManager = new LevelManager(this);
     }
 
     private void startGameLoop() {
@@ -36,6 +50,7 @@ public class Game implements Runnable {
     }
 
     public void render (Graphics g) {
+        levelManager.draw((Graphics2D) g);
         player.render(g);
     }
 
@@ -92,7 +107,7 @@ public class Game implements Runnable {
 
             /* Prints FPS and UPS every second */
             if (System.currentTimeMillis() - lastChecked >= 1000) {
-                System.out.println("FPS: " + frames + " | UPS: " + updates);
+                // System.out.println("FPS: " + frames + " | UPS: " + updates);
                 frames = 0;
                 updates = 0;
                 lastChecked = System.currentTimeMillis();

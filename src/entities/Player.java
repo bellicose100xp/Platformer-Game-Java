@@ -7,6 +7,7 @@ import util.constants.PlayerActionSprite;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
+import static main.Game.SCALE;
 import static util.constants.PlayerActionSprite.*;
 
 public class Player extends Entity {
@@ -19,8 +20,8 @@ public class Player extends Entity {
     private boolean moving = false, attacking = false;
     private boolean left, up, right, down;
 
-    public Player(float x, float y) {
-        super(x, y);
+    public Player(double x, double y, int width, int height) {
+        super(x, y, width, height);
         loadAnimations();
     }
 
@@ -32,7 +33,7 @@ public class Player extends Entity {
 
     public void render(Graphics g) {
         Graphics2D g2D = (Graphics2D) g;
-        g2D.drawImage(animations[playerAction.idx()][animationIndex], (int) x, (int) y, 256, 160, null);
+        g2D.drawImage(animations[playerAction.idx()][animationIndex], (int) x, (int) y, width, height, null);
     }
 
     private void updateAnimationTick() {
