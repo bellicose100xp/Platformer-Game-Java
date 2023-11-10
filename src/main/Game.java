@@ -34,10 +34,13 @@ public class Game implements Runnable {
     }
 
     private void initGame() {
+        levelManager = new LevelManager(this);
+
         int playerWidth =  (int) (64 * SCALE);
         int playerHeight = (int) (40 * SCALE);
         player = new Player(200, 200, playerWidth, playerHeight );
-        levelManager = new LevelManager(this);
+        player.loadLevelData(levelManager.getCurrentLevel().getLevelData());
+        
     }
 
     private void startGameLoop() {

@@ -1,8 +1,11 @@
 package entities;
 
+import main.Game;
 import util.LoadSave;
 import util.constants.AtlasPath;
 import util.constants.PlayerActionSprite;
+
+import static util.HelperMethods.canMoveHere;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -20,9 +23,14 @@ public class Player extends Entity {
     private boolean moving = false, attacking = false;
     private boolean left, up, right, down;
 
+    private int[][] levelData;
+
     public Player(double x, double y, int width, int height) {
         super(x, y, width, height);
         loadAnimations();
+        // 20 pixel is the actual size of the players body width in the hitbox
+        // 28 pixel is the actual size of the players body height in the hitbox
+        initHitbox(x, y, 20 * SCALE, 28 * SCALE);
     }
 
     public void update() {
@@ -33,7 +41,13 @@ public class Player extends Entity {
 
     public void render(Graphics g) {
         Graphics2D g2D = (Graphics2D) g;
-        g2D.drawImage(animations[playerAction.idx()][animationIndex], (int) x, (int) y, width, height, null);
+        // Players body is 21 pixels to right of the hitbox's left edge
+        double xDrawOffset = 21 * SCALE;
+        // Players body is 4 pixels below the top edge of the hitbox
+        double yDrawOffset = 4 * SCALE;
+        g2D.drawImage(animations[playerAction.idx()][animationIndex], (int) (hitbox.x - xDrawOffset),
+                (int) (hitbox.y - yDrawOffset), width, height, null);
+        drawHitbox(g2D);
     }
 
     private void updateAnimationTick() {
@@ -55,20 +69,30 @@ public class Player extends Entity {
     private void updatePosition() {
         moving = false;
 
+        // If we are not pressing any navigation keys actively, we shouldn't update player
+        if (!left && !right && !up && !down) {
+            return;
+        }
+
         double speed = 2.0;
+        double xSpeed = 0.0, ySpeed = 0.0;
+
         if (left && !right) {
-            x -= speed;
-            moving = true;
+            xSpeed = -speed;
         } else if (right && !left) {
-            x += speed;
-            moving = true;
+            xSpeed = speed;
         }
 
         if (up && !down) {
-            y -= speed;
-            moving = true;
+            ySpeed = -speed;
         } else if (down && !up) {
-            y += speed;
+            ySpeed = speed;
+        }
+
+        // Move player only if it can move there
+        if (canMoveHere(hitbox.x + xSpeed, hitbox.y + ySpeed, hitbox.width,  hitbox.height, levelData)) {
+            hitbox.x += xSpeed;
+            hitbox.y += ySpeed;
             moving = true;
         }
     }
@@ -100,6 +124,10 @@ public class Player extends Entity {
                 animations[i][j] = img.getSubimage(64 * j, 40 * i, 64, 40);
             }
         }
+    }
+
+    public void loadLevelData(int[][] levelData) {
+        this.levelData = levelData;
     }
 
     public boolean isLeft() {
