@@ -5,12 +5,11 @@ import util.LoadSave;
 import util.constants.AtlasPath;
 import util.constants.PlayerActionSprite;
 
-import static util.HelperMethods.canMoveHere;
-
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
 import static main.Game.SCALE;
+import static util.HelperMethods.*;
 import static util.constants.PlayerActionSprite.*;
 
 public class Player extends Entity {
@@ -23,6 +22,14 @@ public class Player extends Entity {
     private boolean moving = false, attacking = false;
     private boolean left, up, right, down;
 
+    // Variables for Jumping / Gravity Physics
+    public boolean jump;
+    private double airSpeed = 0.0;
+    private double gravity = 0.04 * SCALE;
+    private double jumpSpeed = -2.25 * SCALE;
+    private double fallSpeedAfterCollision = 0.5 * SCALE;
+    private boolean inAir = false;
+
     private int[][] levelData;
 
     public Player(double x, double y, int width, int height) {
@@ -30,7 +37,7 @@ public class Player extends Entity {
         loadAnimations();
         // 20 pixel is the actual size of the players body width in the hitbox
         // 28 pixel is the actual size of the players body height in the hitbox
-        initHitbox(x, y, 20 * SCALE, 28 * SCALE);
+        initHitbox(x, y, 20 * SCALE, 27 * SCALE);
     }
 
     public void update() {
@@ -69,31 +76,65 @@ public class Player extends Entity {
     private void updatePosition() {
         moving = false;
 
+        if (jump) {
+            jump();
+        }
+
         // If we are not pressing any navigation keys actively, we shouldn't update player
-        if (!left && !right && !up && !down) {
+        if (!left && !right && !inAir) {
             return;
         }
 
         double speed = 2.0;
-        double xSpeed = 0.0, ySpeed = 0.0;
+        double xSpeed = 0.0;
 
-        if (left && !right) {
-            xSpeed = -speed;
-        } else if (right && !left) {
-            xSpeed = speed;
+        if (left) xSpeed -= speed;
+        if (right) xSpeed += speed;
+
+        if (!inAir) {
+            if (!isEntityOnFloor(hitbox, levelData)) {
+                inAir = true;
+            }
         }
 
-        if (up && !down) {
-            ySpeed = -speed;
-        } else if (down && !up) {
-            ySpeed = speed;
+        if (inAir) {
+            if (canMoveHere(hitbox.x, hitbox.y + airSpeed, hitbox.width, hitbox.height, levelData)) {
+                hitbox.y += airSpeed;
+                airSpeed += gravity;
+                updateXPosition(xSpeed);
+            } else {
+                hitbox.y = getEntityYPositionUnderRoofOrAboveFloor(hitbox, airSpeed);
+                if (airSpeed > 0) {
+                    resetInAir();
+                } else {
+                    airSpeed = fallSpeedAfterCollision;
+                }
+                updateXPosition(xSpeed);
+            }
+        } else {
+            updateXPosition(xSpeed);
         }
+        moving = true;
+    }
 
-        // Move player only if it can move there
-        if (canMoveHere(hitbox.x + xSpeed, hitbox.y + ySpeed, hitbox.width,  hitbox.height, levelData)) {
+    private void jump() {
+        if (inAir)
+            return;
+
+        inAir = true;
+        airSpeed = jumpSpeed;
+    }
+
+    private void resetInAir() {
+        inAir = false;
+        airSpeed = 0;
+    }
+
+    private void updateXPosition(double xSpeed) {
+        if (canMoveHere(hitbox.x + xSpeed, hitbox.y, hitbox.width, hitbox.height, levelData)) {
             hitbox.x += xSpeed;
-            hitbox.y += ySpeed;
-            moving = true;
+        } else {
+            hitbox.x = getEntityXPosNextToWall(hitbox, xSpeed);
         }
     }
 
@@ -101,6 +142,14 @@ public class Player extends Entity {
         PlayerActionSprite startAnimation = playerAction;
 
         playerAction = moving ? RUNNING : IDLE;
+
+        if (inAir) {
+            if (airSpeed < 0) {
+                playerAction = JUMP;
+            } else {
+                playerAction = FALLING;
+            }
+        }
 
         // Attacking animation overrides moving and idle animations
         if (attacking) playerAction = ATTACK_1;
@@ -128,6 +177,9 @@ public class Player extends Entity {
 
     public void loadLevelData(int[][] levelData) {
         this.levelData = levelData;
+        if (!isEntityOnFloor(hitbox, levelData)) {
+            inAir = true;
+        }
     }
 
     public boolean isLeft() {
@@ -168,5 +220,9 @@ public class Player extends Entity {
 
     public void setAttacking(boolean attacking) {
         this.attacking = attacking;
+    }
+
+    public void setJump(boolean jump) {
+        this.jump = jump;
     }
 }
